@@ -14,5 +14,8 @@ ftp -s:ftp.txt
 sudo pip install pyftpdlib
 python -m pyftpdlib -p21
 
+twistd ftp -p 21 -r ~/Desktop/Labs/Optimum/ --userAnonymous=anon --password-file=passwd
+
 # Launch Python HTTP
 python -m SimpleHTTPServer 80
+
